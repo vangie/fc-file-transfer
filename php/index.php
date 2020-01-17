@@ -15,15 +15,6 @@ function handler($request, $context): Response
     $queries    = $request->getQueryParams();
     $type = \strtolower($request->getHeaderLine('Content-Type'));
     list($type) = \explode(';', $type);
-    /*
-    $body       = $request->getBody()->getContents();
-    $queries    = $request->getQueryParams();
-    $method     = $request->getMethod();
-    $headers    = $request->getHeaders();
-    $path       = $request->getAttribute('path');
-    $requestURI = $request->getAttribute('requestURI');
-    $clientIP   = $request->getAttribute('clientIP');
-    */
 
     if ($path === "" && !endsWith($requestURI, "/")) {
         return new Response(
