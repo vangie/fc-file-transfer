@@ -41,9 +41,18 @@
 
 * docker
 * [funcraft](https://github.com/alibaba/funcraft/blob/master/docs/usage/installation-zh.md)
+* git
 * make
 
 ### 构建并启动函数
+
+克隆代码
+
+```bash
+git clone https://github.com/vangie/fc-file-transfer
+```
+
+本地启动函数
 
 ```bash
 $ make start
