@@ -1,9 +1,9 @@
+clean:
+	rm -rf ./.fun
+
 build:
 	fun build
-	# cp html/* .fun/build/artifacts/file-transfer/nodejs/
-	# cp html/* .fun/build/artifacts/file-transfer/python/
-	# cp html/* .fun/build/artifacts/file-transfer/java/
-	cp html/* .fun/build/artifacts/file-transfer/php/
+	find .fun/build/artifacts/file-transfer/* -maxdepth 0 -exec cp html/* {} \;
 
 start: build
 	fun local start

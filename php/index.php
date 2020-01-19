@@ -32,7 +32,7 @@ function handler($request, $context): Response
         return new Response(
             200,
             array(
-                'content-type' => 'application/json'
+                'Content-Type' => 'application/json'
             ),
             json_encode($files)
         );
@@ -47,7 +47,7 @@ function handler($request, $context): Response
         return new Response(
             200,
             array(
-                'content-type' => 'application/json'
+                'Content-Type' => 'application/json'
             ),
             json_encode(array(
                 "code" => 200,
@@ -59,7 +59,7 @@ function handler($request, $context): Response
         return new Response(
             200,
             array(
-                'content-type' => 'application/octet-stream',
+                'Content-Type' => 'application/octet-stream',
                 "Content-Disposition" => "attachment; filename=\"$filename\""
             ),
             new Stream(fopen($UPLOADED_DIR . "/" . $filename, 'r'))
@@ -68,7 +68,7 @@ function handler($request, $context): Response
         return new Response(
             200,
             array(
-                'content-type' => 'text/html'
+                'Content-Type' => 'text/html'
             ),
             new Stream(fopen(__DIR__ . '/index.html', 'r'))
         );

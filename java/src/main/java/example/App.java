@@ -35,7 +35,7 @@ public class App implements HttpRequestHandler {
             response.setHeader("Location", requestURI + "/");
         } else if (requestPath.equals("/list") && request.getMethod().equals("GET")) {
             response.setStatus(200);
-            response.setHeader("content-type", "application/json");
+            response.setHeader("Content-Type", "application/json");
 
             Files.createDirectories(Paths.get(UPLOADED_DIR));
 
@@ -50,7 +50,7 @@ public class App implements HttpRequestHandler {
             Files.copy(part.getInputStream(), Paths.get(UPLOADED_DIR, filename));
 
             response.setStatus(200);
-            response.setHeader("content-type", "application/json");
+            response.setHeader("Content-Type", "application/json");
 
             JsonWriter jsonWriter = Json.createWriter(response.getOutputStream());
             jsonWriter.write(Json.createObjectBuilder().add("code", 200).add("msg", "upload success.").build());
@@ -68,7 +68,7 @@ public class App implements HttpRequestHandler {
             out.close();
         } else {
             response.setStatus(200);
-            response.setHeader("content-type", "text/html");
+            response.setHeader("Content-Type", "text/html");
             OutputStream out = response.getOutputStream();
             Files.copy(Paths.get("index.html"), out);
             out.flush();

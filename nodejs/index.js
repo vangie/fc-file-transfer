@@ -45,7 +45,7 @@ module.exports.handler = async function (req, resp, context) {
     }
 
     if (req.path === '/list' && req.method === 'GET') {
-        resp.setHeader('content-type', 'application/json');
+        resp.setHeader('Content-Type', 'application/json');
         resp.send(JSON.stringify(await listFiles()));
     } else if (req.path === "/" && !req.url.endsWith("/")) {
         resp.setStatusCode(301);
@@ -53,8 +53,8 @@ module.exports.handler = async function (req, resp, context) {
         resp.send("");
     } else if (req.path === "/download" && req.queries.filename) {
         const filename = req.queries.filename;
-        resp.setHeader('context-type', 'application/octet-stream');
-        resp.setHeader('Content-Disposition', `attachment; filename="${filename}"`)
+        resp.setHeader('Context-Type', 'application/octet-stream');
+        resp.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
         resp.send(fs.createReadStream(UPLOADED_DIR + "/" + filename));
     } else if (req.path === '/upload' && req.method === 'POST') {
         const form = new multiparty.Form({
@@ -67,7 +67,7 @@ module.exports.handler = async function (req, resp, context) {
 
             if(err){
                 resp.setStatusCode(500);
-                resp.setHeader('content-type', 'application/json');
+                resp.setHeader('Content-Type', 'application/json');
                 resp.send(JSON.stringify({code:500, error: err}));
             }
 
@@ -77,14 +77,14 @@ module.exports.handler = async function (req, resp, context) {
             });
 
             resp.setStatusCode(200);
-            resp.setHeader('content-type', 'application/json');
+            resp.setHeader('Content-Type', 'application/json');
             resp.send(JSON.stringify({code:200, msg: "upload success."}));
         });
 
 
     } else {
         resp.setStatusCode(200);
-        resp.setHeader('content-type', 'text/html');
+        resp.setHeader('Content-Type', 'text/html');
         resp.send(fs.createReadStream('index.html'));
     }
 }

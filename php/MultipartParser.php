@@ -92,7 +92,7 @@ final class MultipartParser
 
     public function parse(ServerRequestInterface $request)
     {
-        $contentType = $request->getHeaderLine('content-type');
+        $contentType = $request->getHeaderLine('Content-Type');
         if (!\preg_match('/boundary="?(.*)"?$/', $contentType, $matches)) {
             return $request;
         }
@@ -156,7 +156,7 @@ final class MultipartParser
             $this->parseFile(
                 $name,
                 $filename,
-                isset($headers['content-type'][0]) ? $headers['content-type'][0] : null,
+                isset($headers['Content-Type'][0]) ? $headers['Content-Type'][0] : null,
                 $body
             );
         } else {
