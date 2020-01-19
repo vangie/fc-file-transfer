@@ -110,4 +110,4 @@ function compute app listening on port 8000!
 
 1. 文件大小[限制](#使用限制)
 2. fun local 实现存在已知问题，上传过大的文件会自动退出，未来的版本会修复。
-3. 部署到线上需要绑定自定义运行才能使用，否则 HTML 文件在浏览器中会被[强制下载](https://help.aliyun.com/knowledge_detail/56103.html#HTTP-Trigger-compulsory-header)而不是直接渲染。
+3. 部署到线上需要绑定[自定义域名](https://help.aliyun.com/document_detail/90722.html)才能使用，否则 HTML 文件在浏览器中会被[强制下载](https://help.aliyun.com/knowledge_detail/56103.html#HTTP-Trigger-compulsory-header)而不是直接渲染。
