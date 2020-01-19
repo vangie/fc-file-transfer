@@ -1,6 +1,14 @@
-# 函数计算上传下载示例集
+# 轻松实现函数计算文件上传下载
 
-该示例集包含了[函数计算](https://www.aliyun.com/product/fc)各种 Runtime 结合 HTTP Trigger 实现文件上传和文件下载的示例。
+这是一个包含了[函数计算](https://statistics.functioncompute.com/?title=%E8%BD%BB%E6%9D%BE%E5%AE%9E%E7%8E%B0%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD&author=%E5%80%9A%E8%B4%A4&src=article&url=http%3A%2F%2Ffc.console.aliyun.com%2F%3Ffctraceid%3DYXV0aG9yJTNEJUU1JTgwJTlBJUU4JUI0JUE0JTI2dGl0bGUlM0QlRTglQkQlQkIlRTYlOUQlQkUlRTUlQUUlOUUlRTclOEUlQjAlRTUlODclQkQlRTYlOTUlQjAlRTglQUUlQTElRTclQUUlOTclRTYlOTYlODclRTQlQkIlQjYlRTQlQjglOEElRTQlQkMlQTAlRTQlQjglOEIlRTglQkQlQkQ%3D)每种 Runtime 结合 HTTP Trigger 实现文件上传和文件下载的示例集。每个示例包括:
+
+* 一个公共 HTML 页面，该页面有一个文件选择框和上传按钮，会列出已经上传的文件，点击某个已上传的文件可以下载下来。
+* 支持文件上传、下载和列举的函数。
+
+不同语言在处理 HTTP 协议上传下载时都有很多中方法和社区库，特别是结合函数计算的场景，开发人员往往需要耗费不少精力去学习和尝试。本示例集的目的就是省去开发者甄别和试错的精力和时间，每种语言提供一种有效且更符合社区最佳实践的方式，让开发者可以拿来即用。
+
+![](https://img.alicdn.com/tfs/TB1b4IzubY1gK0jSZTEXXXDQVXa-773-593.png)
+![](https://data-analysis.cn-shanghai.log.aliyuncs.com/logstores/article-logs/track_ua.gif?APIVersion=0.6.0&title=%E8%BD%BB%E6%9D%BE%E5%AE%9E%E7%8E%B0%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD&author=%E5%80%9A%E8%B4%A4&src=article)
 
 当前已支持的 Runtime 包括
 
@@ -65,7 +73,7 @@ function compute app listening on port 8000!
 
 ### 效果演示
 
-上面四个 URL 地址顺便选一个在浏览器中打开示例页面
+上面四个 URL 地址随便选一个在浏览器中打开示例页面
 
 ![](https://img.alicdn.com/tfs/TB1SCQxukT2gK0jSZFkXXcIQFXa-839-479.gif)
 
