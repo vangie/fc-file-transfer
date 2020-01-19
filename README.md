@@ -2,10 +2,10 @@
 
 这是一个包含了[函数计算](https://statistics.functioncompute.com/?title=%E8%BD%BB%E6%9D%BE%E5%AE%9E%E7%8E%B0%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD&author=%E5%80%9A%E8%B4%A4&src=article&url=http%3A%2F%2Ffc.console.aliyun.com%2F%3Ffctraceid%3DYXV0aG9yJTNEJUU1JTgwJTlBJUU4JUI0JUE0JTI2dGl0bGUlM0QlRTglQkQlQkIlRTYlOUQlQkUlRTUlQUUlOUUlRTclOEUlQjAlRTUlODclQkQlRTYlOTUlQjAlRTglQUUlQTElRTclQUUlOTclRTYlOTYlODclRTQlQkIlQjYlRTQlQjglOEElRTQlQkMlQTAlRTQlQjglOEIlRTglQkQlQkQ%3D)每种 Runtime 结合 HTTP Trigger 实现文件上传和文件下载的示例集。每个示例包括:
 
-* 一个公共 HTML 页面，该页面有一个文件选择框和上传按钮，会列出已经上传的文件，点击某个已上传的文件可以下载下来。
+* 一个公共 HTML 页面，该页面有一个文件选择框和上传按钮，会列出已经上传的文件，点击某个已上传的文件可以把文件下载下来。
 * 支持文件上传、下载和列举的函数。
 
-不同语言在处理 HTTP 协议上传下载时都有很多中方法和社区库，特别是结合函数计算的场景，开发人员往往需要耗费不少精力去学习和尝试。本示例集的目的就是省去开发者甄别和试错的精力和时间，每种语言提供一种有效且更符合社区最佳实践的方式，让开发者可以拿来即用。
+我们知道不同语言在处理 HTTP 协议上传下载时都有很多中方法和社区库，特别是结合函数计算的场景，开发人员往往需要耗费不少精力去学习和尝试。本示例集编撰的目的就是节省开发者甄别的精力和时间，为每种语言提供一种有效且符合社区最佳实践的方法，可以拿来即用。
 
 ![](https://img.alicdn.com/tfs/TB1b4IzubY1gK0jSZTEXXXDQVXa-773-593.png)
 ![](https://data-analysis.cn-shanghai.log.aliyuncs.com/logstores/article-logs/track_ua.gif?APIVersion=0.6.0&title=%E8%BD%BB%E6%9D%BE%E5%AE%9E%E7%8E%B0%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD&author=%E5%80%9A%E8%B4%A4&src=article)
@@ -27,7 +27,7 @@
 
 ## 使用限制
 
-由于函数计算对于 HTTP 的 Request 和 Response 的 Body 大小限制均为 6M，所以该示例集只适用于借助函数计算上传和下载文件小于 6M 的场景。对于大于 6M 的情况，可以考虑如下方法
+由于函数计算对于 HTTP 的 Request 和 Response 的 Body 大小限制均为 6M，所以该示例集只适用于借助函数计算上传和下载文件小于 6M 的场景。对于大于 6M 的情况，可以考虑如下方法:
 
 1. **分片上传**，把文件切分成小块，上传以后再拼接起来。
 2. **借助于 OSS**，将文件先上传 OSS，函数从 OSS 上下载文件，处理完以后回传 OSS。
@@ -100,5 +100,5 @@ function compute app listening on port 8000!
 ## 已知问题
 
 1. 文件大小[限制](#使用限制)
-2. fun local 实现存在已知问题，上传过大的文件会自动退出，未来的版本会修复
+2. fun local 实现存在已知问题，上传过大的文件会自动退出，未来的版本会修复。
 3. 部署到线上需要绑定自定义运行才能使用，否则 HTML 文件在浏览器中会被[强制下载](https://help.aliyun.com/knowledge_detail/56103.html#HTTP-Trigger-compulsory-header)而不是直接渲染。
