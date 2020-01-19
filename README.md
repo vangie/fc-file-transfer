@@ -92,10 +92,10 @@ function compute app listening on port 8000!
 
 ## 不同语言的示例代码
 
-* [nodejs](nodejs/index.js)
-* [python](python/index.py)
-* [php](php/index.php)
-* [java](java/src/main/java/example/App.java)
+* [nodejs](https://github.com/vangie/fc-file-transfer/blob/master/nodejs/index.js)
+* [python](https://github.com/vangie/fc-file-transfer/blob/master/python/index.py)
+* [php](https://github.com/vangie/fc-file-transfer/blob/master/php/index.php)
+* [java](https://github.com/vangie/fc-file-transfer/blob/master/java/src/main/java/example/App.java)
 
 ## 已知问题
 
