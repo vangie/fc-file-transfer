@@ -1,9 +1,10 @@
 <?php
 
-include_once('MultipartParser.php');
+ini_set("enable_post_data_reading", "1");
 
 use RingCentral\Psr7\Response;
 use RingCentral\Psr7\Stream;
+
 
 function handler($request, $context): Response
 {
@@ -38,9 +39,7 @@ function handler($request, $context): Response
         );
     } else if ($path === '/upload' && $method === "POST" && $type === 'multipart/form-data') {
 
-        $parsedRequest = (new MultipartParser())->parse($request);
-
-        $file = $parsedRequest->getUploadedFiles()["fileContent"];
+        $file = $request->getUploadedFiles()["fileContent"];
         $filename = $file->getClientFilename();
         $file->moveTo("$UPLOADED_DIR/$filename");
 
